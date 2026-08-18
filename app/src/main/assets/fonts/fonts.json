@@ -1,0 +1,65 @@
+{
+  "version": 3,
+  "fonts": [
+    {
+      "id": "system",
+      "displayName": "系统默认",
+      "family": "sans-serif",
+      "asset": null,
+      "builtin": true
+    },
+    {
+      "id": "wenkai",
+      "displayName": "霞鹜文楷（内置）",
+      "family": "LXGW WenKai Lite",
+      "asset": "fonts/LXGWWenKaiLite-Regular.ttf",
+      "builtin": true,
+      "note": "内置霞鹜文楷 Lite（SIL OFL），适合中文小说阅读"
+    },
+    {
+      "id": "xin_song",
+      "displayName": "新宋（公文风格）",
+      "family": "Noto Serif SC",
+      "asset": "dynamic:noto_serif_sc",
+      "builtin": false,
+      "note": "首次选用时自动下载 Noto Serif SC（OFL），接近公文新宋体"
+    },
+    {
+      "id": "times",
+      "displayName": "Times / Liberation",
+      "family": "Liberation Serif",
+      "asset": "fonts/LiberationSerif-Regular.ttf",
+      "builtin": true,
+      "note": "内置 Liberation Serif（GPL），与 Times New Roman 度量兼容"
+    },
+    {
+      "id": "smiley",
+      "displayName": "得意黑（斜体）",
+      "family": "Smiley Sans",
+      "asset": "fonts/SmileySans-Oblique.ttf",
+      "builtin": true,
+      "note": "内置得意黑 Smiley Sans（SIL OFL），斜体标题/个性阅读"
+    },
+    {
+      "id": "serif",
+      "displayName": "衬线",
+      "family": "serif",
+      "asset": null,
+      "builtin": true
+    },
+    {
+      "id": "sans",
+      "displayName": "无衬线",
+      "family": "sans-serif",
+      "asset": null,
+      "builtin": true
+    },
+    {
+      "id": "mono",
+      "displayName": "等宽",
+      "family": "monospace",
+      "asset": null,
+      "builtin": true
+    }
+  ]
+}

@@ -1,0 +1,204 @@
+:root {
+  --bg: #f7f4ee;
+  --fg: #1c1916;
+  --muted: #6b645c;
+  --accent: #2f5ea8;
+  --tts-hl: #1565c0;
+  --tts-hl-bg: rgba(255, 235, 59, 0.55);
+  --tts-mode: color;
+  --font-size: 18px;
+  --line-height: 1.85;
+  --pad: 18px;
+  --pad-v: 10px;
+  --pad-l: 18px;
+  --pad-r: 18px;
+  --pad-t: 10px;
+  --pad-b: 10px;
+  --safe-top: 0px;
+  --safe-bottom: 28px;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: "Noto Serif CJK SC", "Source Han Serif SC", "Songti SC", "Georgia", serif;
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  column-count: 1 !important;
+  -webkit-column-count: 1 !important;
+}
+body.theme-night {
+  --bg:#121212; --fg:#e8e6e3; --muted:#9a9590; --tts-hl:#90caf9;
+}
+body.theme-paper { --bg:#f7f4ee; --fg:#1c1916; --tts-hl:#1565c0; }
+body.theme-green { --bg:#c7edcc; --fg:#1a2a1a; --tts-hl:#0d47a1; }
+
+#page-clip {
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+/* 分页：裁切视口，正文单栏纵向平移 */
+body.mode-page {
+  overflow: hidden !important;
+  height: 100vh;
+  width: 100%;
+}
+body.mode-page #page-clip {
+  height: 100vh;
+  overflow: hidden;
+  width: 100%;
+}
+
+#content {
+  padding: var(--pad-v) var(--pad) calc(var(--pad-v) + 24px);
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  column-count: 1 !important;
+  -webkit-column-count: 1 !important;
+}
+body.mode-page #content {
+  padding-top: var(--pad-v);
+  padding-bottom: var(--pad-v);
+  will-change: transform;
+}
+
+h1.title {
+  font-size: 1.35em;
+  margin: 0.4em 0 0.8em;
+  line-height: 1.35;
+  text-indent: 0;
+}
+.meta {
+  color: var(--muted);
+  font-size: 0.88em;
+  margin-bottom: 1.2em;
+  text-indent: 0;
+}
+.para-block {
+  margin: 0;
+  padding: 0.35em 0;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.para-block p {
+  margin: 0;
+  text-indent: 2em;
+  text-align: left;
+  max-width: 100%;
+}
+.para-block p.with-image, .para-block p.empty { text-indent: 0; }
+.para-block img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0.5em auto;
+}
+.pc-badge {
+  display: inline;
+  margin-left: 0.2em;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--fg);
+  opacity: 0.42;
+  font-size: 0.78em;
+  font-weight: 500;
+  line-height: inherit;
+  text-indent: 0;
+  cursor: pointer;
+  user-select: none;
+  vertical-align: baseline;
+}
+.pc-badge:active { opacity: 0.75; }
+
+/* 朗读高亮：color=文字变色；marker=荧光笔底色 */
+body.tts-hl-color .para-block.tts-active,
+body.tts-hl-color .para-block.tts-active p {
+  color: var(--tts-hl);
+  background: rgba(21, 101, 192, 0.12);
+  box-shadow: none;
+  border-radius: 2px;
+}
+body.tts-hl-color .para-block.tts-active .pc-badge {
+  color: var(--tts-hl);
+  opacity: 0.7;
+}
+body.tts-hl-marker .para-block.tts-active,
+body.tts-hl-marker .para-block.tts-active p {
+  color: inherit;
+  background: var(--tts-hl-bg);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  border-radius: 2px;
+}
+body.tts-hl-marker .para-block.tts-active .pc-badge {
+  color: inherit;
+  opacity: 0.7;
+}
+/* 兼容未设置 mode 的旧缓存 */
+.para-block.tts-active,
+.para-block.tts-active p {
+  color: var(--tts-hl);
+}
+body.tts-hl-marker .para-block.tts-active,
+body.tts-hl-marker .para-block.tts-active p {
+  color: inherit;
+}
+
+.chapter-bar {
+  margin: 2em 0 0.6em;
+  padding: 0.85em 0.9em;
+  border-top: 1px dashed rgba(0,0,0,0.18);
+  border-bottom: 1px dashed rgba(0,0,0,0.18);
+  text-align: center;
+  text-indent: 0;
+}
+.chapter-bar button {
+  border: 1px solid rgba(0,0,0,0.22);
+  background: transparent;
+  color: var(--fg);
+  opacity: 0.75;
+  border-radius: 6px;
+  padding: 0.55em 1em;
+  font-size: 0.95em;
+  font-weight: 500;
+}
+.chapter-nav {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  padding: 1.2em 0 2em;
+  text-indent: 0;
+}
+.chapter-nav .chap-nav {
+  border: 1px solid rgba(0,0,0,0.22);
+  background: transparent;
+  color: var(--fg);
+  opacity: 0.8;
+  border-radius: 999px;
+  padding: 0.55em 1.2em;
+  font-size: 0.92em;
+}
+.chapter-nav .chap-nav.primary { opacity: 1; }
+.chapter-nav .chap-end { color: var(--muted); font-size: 0.9em; }
+
+.hint {
+  position: fixed;
+  left: 50%;
+  top: calc(10px + var(--safe-top));
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s;
+  z-index: 5;
+}
+.hint.show { opacity: 1; }

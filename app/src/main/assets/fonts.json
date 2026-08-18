@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "note": "系统字体族映射；可后续扩展为 assets 内 ttf 路径。zh/latin 分开配置便于中英混排。",
+  "zh": [
+    { "id": "default", "label": "系统默认", "family": "sans-serif" },
+    { "id": "sans", "label": "无衬线", "family": "sans-serif" },
+    { "id": "serif", "label": "衬线/宋体风格", "family": "serif" },
+    { "id": "song", "label": "宋体", "family": "serif" },
+    { "id": "kai", "label": "楷体风格", "family": "serif" },
+    { "id": "hei", "label": "黑体风格", "family": "sans-serif-medium" },
+    { "id": "fangsong", "label": "仿宋风格", "family": "serif" },
+    { "id": "mono", "label": "等宽", "family": "monospace" }
+  ],
+  "latin": [
+    { "id": "latin-default", "label": "Latin Default", "family": "sans-serif" },
+    { "id": "latin-serif", "label": "Latin Serif", "family": "serif" },
+    { "id": "latin-mono", "label": "Latin Mono", "family": "monospace" },
+    { "id": "latin-condensed", "label": "Condensed", "family": "sans-serif-condensed" }
+  ]
+}
